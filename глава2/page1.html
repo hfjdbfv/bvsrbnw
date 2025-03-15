@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book - Глава 2</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f0f8ff;
+            --text-color: #2a1506;
+            --book-bg: #ffffff;
+            --shadow-color: rgba(0,0,0,0.2);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --book-bg: #2d2d2d;
+            --shadow-color: rgba(255,255,255,0.1);
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-color);
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-color);
+            background: none;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .book-container {
+            width: 1000px;
+            height: 700px;
+            position: relative;
+            perspective: 2000px;
+        }
+
+        .book {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            display: flex;
+        }
+
+        .page-left, .page-right {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            background: var(--book-bg);
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 0 20px var(--shadow-color);
+            display: block;
+        }
+
+        .page-left {
+            border-radius: 15px 0 0 15px;
+            border-right: 2px solid #8b4513;
+        }
+
+        .page-right {
+            border-radius: 0 15px 15px 0;
+            border-left: 2px solid #8b4513;
+        }
+
+        .content {
+            color: var(--text-color);
+            font-size: 14px;
+            line-height: 1.4;
+            text-align: justify;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .page-number {
+            font-size: 14px;
+            color: var(--text-color);
+            align-self: center;
+            margin-top: 20px;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: linear-gradient(45deg, #4a2209, #8b4513);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chapter-title {
+            font-size: 18px;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="book-container">
+        <div class="book">
+            <!-- Page 4 Left -->
+            <div class="page-left" id="page15">
+                <div class="content">
+                    <div>
+                        <div class="chapter-title">Глава 2</div>
+                        <p>Николай открыл глаза и резко сел.</p>
+                        <p>Сердце бешено колотилось, тело было напряжено, словно он только что проснулся от кошмара. Он огляделся. Всё было на своих местах — книжная полка, письменный стол, приглушённый свет утреннего солнца пробивался сквозь шторы.</p>
+                        <p>Но что-то было не так.</p>
+                        <p>Он не помнил, как заснул.</p>
+                        <p>Последнее воспоминание – книга. Он читал, не мог оторваться, страницы будто притягивали его взгляд. А потом… пустота. Будто кто-то стёр из памяти последние часы.</p>
+                        <p>Книга всё ещё была у него в руках.</p>
+                        <p>Николай моргнул, посмотрел на страницу, на которой она была раскрыта.</p>
+                        <p>Текст описывал жестокие убийства. Детали были жутко натуралистичными – глубокие порезы, изломанные конечности, кровь, растёкшаяся по полу. Казалось, автор смаковал эти детали, но странное было не в этом.</p>
+                        <p>Имена. Даты. Названия мест.</p>
+                        <p>Их не было.</p>
+                        <p>Каждый раз, когда текст подходил к моменту, где должно было быть имя жертвы или преступника, там было пустое пространство. Как будто слова были стёрты.</p>
+                    </div>
+                    <div class="page-number">15</div>
+                </div>
+            </div>
+            <!-- Page 4 Right -->
+            <div class="page-right" id="page16">
+                <div class="content">
+                    <div>
+                        <p>Николай перевернул страницу.</p>
+                        <p>Она оказалась наполовину вырванной. Или залитой чем-то – тёмные пятна размазались по бумаге, скрывая буквы. Было ли это чернила? Или… что-то другое?</p>
+                        <p>Николай нахмурился. Так было с самого начала?</p>
+                        <p>Он начал листать дальше, глаза быстро пробегали по строкам, но чем больше он читал, тем сильнее росло странное чувство. Будто слова в книге менялись. Будто они подстраивались под его мысли, вплетаясь в его сознание.</p>
+                        <p>Истории были разрозненными, но объединяло их одно – убийца всегда оставался в тени. Его не называли. Его личность будто скрывалась за словами, исчезая в момент, когда читатель мог бы его узнать.</p>
+                        <p>Николай сглотнул, перевернул ещё страницу, но едва успел зацепиться взглядом за строки, как почувствовал…</p>
+                        <p>Ощущение, что он знал, о чём идёт речь, вспыхнуло в нём внезапно.</p>
+                        <p>Эти убийства. Эти события. Он видел их раньше.</p>
+                        <p>Но где?</p>
+                    </div>
+                    <div class="page-number">16</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" onclick="location.href='page2.html'">← Назад</button>
+        <button class="nav-button" onclick="location.href='../глава3/page1.html'">Следующий →</button>
+    </div>
+
+    <script src="../scripts.js"></script>
+    <script>
+        let currentPage = 1;
+
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle i');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+
+        function showPage(page) {
+            document.querySelectorAll('.page-left, .page-right').forEach(p => p.classList.remove('active'));
+            document.getElementById(`page${page}`).classList.add('active');
+            document.getElementById(`page${page + 1}`).classList.add('active');
+        }
+
+        function nextPages() {
+            currentPage += 2;
+            showPage(currentPage);
+        }
+
+        function prevPages() {
+            currentPage -= 2;
+            showPage(currentPage);
+        }
+
+        showPage(currentPage);
+    </script>
+</body>
+</html>

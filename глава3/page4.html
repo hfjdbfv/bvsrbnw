@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book - Глава 3</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="book-container">
+        <div class="book">
+            <div class="page-left" id="page7">
+                <div class="content">
+                    <div>
+                        <div class="chapter-title">Глава 4</div>
+                        <p>Николай вышел из машины. Ночная тишина давила на уши, и вдруг его окутало странное чувство — его здесь ждали.</p>
+                        <p>Он медленно двинулся вперёд, гравий хрустел под ногами. Каждый шаг отзывался эхом в голове.</p>
+                        <p>Вот он. Дом с покосившимся крыльцом.</p>
+                        <p>Он знал этот дом.</p>
+                        <p>Ноги сами несли его к двери. Ключ в кармане? Нет, дверь уже была открыта.</p>
+                    </div>
+                    <div class="page-number">7</div>
+                </div>
+            </div>
+            <div class="page-right" id="page8">
+                <div class="content">
+                    <div>
+                        <p>Внутри пахло пылью и сыростью. На столе лежала кружка с недопитым чаем. Будто хозяин вышел только что. Или...</p>
+                        <p>На полу темнело пятно.</p>
+                        <p>В голове вспыхнуло воспоминание — кровь на деревянных досках, тяжёлое дыхание, приглушённые шаги за спиной.</p>
+                        <p>И вдруг раздался голос.</p>
+                        <p>Не в голове.</p>
+                        <p>Из-за стены.</p>
+                        <p>— Детектив... вы вернулись? — голос был хриплым, наполненным сомнением. — Вы снова решили начать поиски?</p>
+                        <p>Николай застыл.</p>
+                        <p>Всё внутри похолодело.</p>
+                        <p>Он пришёл сюда один.</p>
+                        <p>Кто тогда говорил с ним?</p>
+                    </div>
+                    <div class="page-number">8</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" onclick="location.href='page3.html'">← Назад</button>
+        <button class="nav-button" onclick="location.href='page5.html'">Следующий →</button>
+    </div>
+
+    <script src="../scripts.js"></script>
+    <script>
+        let currentPage = 4;
+    </script>
+</body>
+</html>

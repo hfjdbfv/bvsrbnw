@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Book Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f0f8ff;
+            --text-color: #2a1506;
+            --book-bg: #ffffff;
+            --shadow-color: rgba(0,0,0,0.2);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --book-bg: #2d2d2d;
+            --shadow-color: rgba(255,255,255,0.1);
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-color);
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-color);
+            background: none;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .book-container {
+            width: 1000px;
+            height: 700px;
+            position: relative;
+            perspective: 2000px;
+        }
+
+        .book {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            display: flex;
+        }
+
+        .page-left, .page-right {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            background: var(--book-bg);
+            padding: 40px;
+            box-sizing: border-box;
+            box-shadow: 0 0 20px var(--shadow-color);
+        }
+
+        .page-left {
+            border-radius: 15px 0 0 15px;
+            border-right: 2px solid #8b4513;
+        }
+
+        .page-right {
+            border-radius: 0 15px 15px 0;
+            border-left: 2px solid #8b4513;
+        }
+
+        .content {
+            color: var(--text-color);
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            font-size: 16px;
+            color: var(--text-color);
+        }
+
+        .page-left .page-number {
+            right: 20px;
+        }
+
+        .page-right .page-number {
+            left: 20px;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: linear-gradient(45deg, #4a2209, #8b4513);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chapter-title {
+            font-size: 24px;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        .start-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background: linear-gradient(45deg, #4a2209, #8b4513);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .start-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="book-container">
+        <div class="book">
+            <div class="page-left">
+                <div class="chapter-title">Добро пожаловать, читатель!</div>
+                <div class="content">
+                    <h2>Книга: Убийца в шкуре детектива</h2>
+                    <p>Приятного чтения!</p>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="agreement">
+                        <label for="agreement">Я согласен с условиями неразглашения и отказываюсь от жалоб за мою психику</label>
+                    </div>
+                    <button class="start-button" onclick="startReading()">Начать чтение</button>
+                    <div class="page-number">1</div>
+                </div>
+            </div>
+            <div class="page-right">
+                <div class="content">
+                    <p>Каждая страница этой книги хранит в себе частичку древней мудрости и волшебства. Читая её, вы становитесь частью удивительной истории, которая началась много веков назад.</p>
+                    <p>Приготовьтесь к путешествию, которое изменит ваше представление о реальности и возможном. Каждый поворот страницы приближает вас к разгадке великой тайны.</p>
+                    <div class="page-number">2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" onclick="nextPage()">Вперед →</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.querySelector('.theme-toggle i');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                icon.className = 'fas fa-moon';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.className = 'fas fa-sun';
+            }
+        }
+
+        function nextPage() {
+            window.location.href = `глава1/page${currentPage + 1}.html`;
+        }
+
+        function startReading() {
+            const agreement = document.getElementById('agreement');
+            if (agreement.checked) {
+                window.location.href = 'глава1/page2.html';
+            } else {
+                alert('Пожалуйста, согласитесь с условиями неразглашения.');
+            }
+        }
+    </script>
+</body>
+</html>

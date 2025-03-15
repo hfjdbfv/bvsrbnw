@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book - Глава 3</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="book-container">
+        <div class="book">
+            <!-- Левая страница -->
+            <div class="page-left" id="page11">
+                <div class="content">
+                    <div>
+                        <div class="chapter-title">Глава 5</div>
+                        <p>Николай ощущал, как холодный пот выступает на его спине. Он держал альбом, но пальцы дрожали, словно от холода. Воспоминания вспыхивали обрывками, но не складывались в единое целое.</p>
+                        <p>— Что ты хочешь мне сказать? — голос его прозвучал глухо, словно не своим.</p>
+                        <p>Андрей молчал. Он лишь смотрел, изучающе, пристально, как будто ждал, когда Николай сам всё поймёт.</p>
+                        <p>Голова Николая снова закружилась. Он сжал виски, пытаясь остановить этот поток образов, но они прорывались сквозь сознание, заставляя его видеть.</p>
+                        <p>Летний вечер. Тёплый воздух. Запах костра.</p>
+                        <p>Двое мальчишек убегают от старого дома, смеясь. За их спинами – крики.</p>
+                    </div>
+                    <div class="page-number">11</div>
+                </div>
+            </div>
+
+            <!-- Правая страница -->
+            <div class="page-right" id="page12">
+                <div class="content">
+                    <div>
+                        <p>В лесу темно, но они знают дорогу. Они были здесь раньше.</p>
+                        <p>Но потом…</p>
+                        <p>Крик. Не их. Чужой. Жуткий, протяжный.</p>
+                        <p>Николай судорожно вдохнул и открыл глаза. Взгляд наткнулся на Андрея, и теперь он понял.</p>
+                        <p>— Это был ты, — выдохнул он. — Это мы…</p>
+                        <p>Андрей кивнул. В глазах его мелькнула тень.</p>
+                        <p>— Ты почти вспомнил, — тихо сказал он. — Осталось только одно.</p>
+                        <p>Он протянул руку и перелистнул страницу альбома.</p>
+                        <p>На фотографии был ещё один человек.</p>
+                        <p>И Николай знал его лицо.</p>
+                    </div>
+                    <div class="page-number">12</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Навигация -->
+    <div class="navigation">
+        <button class="nav-button" onclick="location.href='page6.html'">← Назад</button>
+        <button class="nav-button" onclick="location.href='page8.html'">Следующий →</button>
+    </div>
+
+    <script src="../scripts.js"></script>
+    <script>
+        let currentPage = 7;
+    </script>
+</body>
+</html>
